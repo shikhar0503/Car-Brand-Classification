@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brand Classification</title>
+</head>
+<body>
+{% extends "base.html" %} {% block content %}
+
+<center><h2 style="color:maroon;">Please upload image of your Car</h2></center>
+
+<div>
+    <center><form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label" style="box-shadow: 0 12px 16px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form></center>
+
+    <center><div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div></center>
+
+   <center> <div class="loader" style="display:none;"></div></center>
+
+    <center><h3 id="result">
+        <span> </span>
+    </h3></center>
+
+</div>
+
+{% endblock %}
+</body>
+</html>
